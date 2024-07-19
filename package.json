@@ -4,18 +4,22 @@
   "description": "React learning 2024",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build src/index.html",
     "test": "jest"
   },
   "author": "Ramaa Bhagwat",
   "license": "ISC",
   "devDependencies": {
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.39",
     "process": "^0.11.10",
-    "parcel": "^2.8.3"
+    "tailwindcss": "^3.4.6"
   },
   "dependencies": {
+    "nodemon": "^3.1.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
   },
   "browserslist": [
     "last 2 versions"

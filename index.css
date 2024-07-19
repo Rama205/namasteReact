@@ -1,4 +1,9 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .header {
  display: flex;
  justify-content: space-between;
  border: 1px solid black;
@@ -47,16 +52,32 @@
 }
 .shimmer-card {
     margin: 200px;
-    width :200px;
-    height: 400px;
+    width :230px;
+    height: 300px;
     background-color: #f0f0f0;
+    flex-wrap: wrap;
 }
 
 .filter {
     padding: 5px;
+    display: flex;
+    margin: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    
   
     
 }
 .filter-res :hover {
     cursor: pointer;
 }
+.login {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.user-card {
+    padding: 10px;
+    border: 2px solid black;
+} */
