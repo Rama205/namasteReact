@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import RestoCard from './RestoCard';
+import React, { useState, useEffect,useContext } from 'react';
+import RestoCard,{withPromotedLabel} from './RestoCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus  from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext';
+
+
 const BodyComponent = () => {
     const [listOfRes, setlistOfRes] = useState([]
     //     [
@@ -56,6 +59,8 @@ const BodyComponent = () => {
 
     const [filterRest, setfilteredData] = useState();
     const [searchText, setSearchText] = useState("");
+    const promotedRestoraunt = withPromotedLabel(RestoCard)
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     useEffect(() => {
         fetchData();
@@ -82,6 +87,8 @@ const status= useOnlineStatus();
 
 if(status === false) return <h1>You are offline please check your internet connectivity</h1>
 
+
+
     return listOfRes.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
@@ -106,11 +113,21 @@ if(status === false) return <h1>You are offline please check your internet conne
         >
             Top rated Restaurant
         </button>
+        <label className='px-4 py-2 shadow-lg bg-green-100 m-4 rounded-2xl'>User Name:</label>
+        <input type="text"
+            className="border border-solid border-black"
+            value ={loggedInUser}
+            onChange ={(e)=> setUserName(e.target.value)}
+            />
     </div>
 </div>
             <div className="flex flex-wrap">
                 {filterRest.map((res) => (
-                    <Link key={res.info.id} to ={"restoraunts/" + res.info.id}><RestoCard  resData={res} /></Link>
+                    <Link key={res.info.id} to ={"restoraunts/" + res.info.id}>
+                        {/* {res.info ? <promotedRestoraunt resData={res}/> : <RestoCard  resData={res} />} */}
+                        <RestoCard  resData={res} />
+                        </Link>
+                        
                 ))}
             </div>
         </div>

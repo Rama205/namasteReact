@@ -6,7 +6,7 @@ const [resInfo,setResInfo] =useState(null)
 
     useEffect(()=>{
         fetchData();
-        console.log("dataa")
+       
     },[])
 
     const fetchData = async()=>{

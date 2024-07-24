@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class UserClass extends  React.Component{
     constructor(props){
         super(props)
@@ -18,7 +19,7 @@ class UserClass extends  React.Component{
         
         const data = await fetch("https://api.github.com/users/Rama205");
         const json = await data.json();
-     console.log("------json",json)
+    //  console.log("------json",json)
      this.setState({
         userInfo:json
      })

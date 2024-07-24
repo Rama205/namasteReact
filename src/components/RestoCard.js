@@ -15,6 +15,17 @@ const RestoCard = (props) => {
             <h4>{sla?.slaString}</h4>
         </div>
     );
+};
+
+export const withPromotedLabel =(RestoCard)=>{
+    return (props) =>{
+        return (
+            <div>
+                <label>Promoted</label>
+                <RestoCard {...props}/>
+            </div>
+        )
+    }
 }
 
 export default RestoCard;
